@@ -16,10 +16,9 @@
         <maven.compiler.release>21</maven.compiler.release>
         <javafx.version>23.0.2</javafx.version>
         <!--
-          Native JavaFX classifier for this machine.
-          Intel Mac = "mac", Apple Silicon = "mac-aarch64",
-          Windows = "win", Linux = "linux".
-          Override on the command line with -Djavafx.platform=mac-aarch64
+          Native JavaFX classifier. Auto-detected per OS/arch by the profiles at
+          the bottom of this file (mac / mac-aarch64 / win / linux / linux-aarch64).
+          This value is only the fallback; override with -Djavafx.platform=… .
         -->
         <javafx.platform>mac</javafx.platform>
         <main.class>com.shredder.Launcher</main.class>
@@ -49,6 +48,21 @@
     <build>
         <finalName>shredder</finalName>
         <plugins>
+            <!-- `mvn clean` also removes the packaged app under dist/ so the
+                 "Build Native App" run config can re-create it each time. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.4.0</version>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>${project.basedir}/dist</directory>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+
             <!-- Run in dev with: mvn javafx:run -->
             <plugin>
                 <groupId>org.openjfx</groupId>
@@ -95,4 +109,82 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <!-- ============================================================= -->
+        <!-- Auto-select the JavaFX native classifier for the build host.  -->
+        <!-- ============================================================= -->
+        <profile>
+            <id>platform-mac-x64</id>
+            <activation>
+                <os><family>mac</family><arch>x86_64</arch></os>
+            </activation>
+            <properties><javafx.platform>mac</javafx.platform></properties>
+        </profile>
+        <profile>
+            <id>platform-mac-aarch64</id>
+            <activation>
+                <os><family>mac</family><arch>aarch64</arch></os>
+            </activation>
+            <properties><javafx.platform>mac-aarch64</javafx.platform></properties>
+        </profile>
+        <profile>
+            <id>platform-windows</id>
+            <activation>
+                <os><family>windows</family></os>
+            </activation>
+            <properties><javafx.platform>win</javafx.platform></properties>
+        </profile>
+        <profile>
+            <id>platform-linux-x64</id>
+            <activation>
+                <os><name>Linux</name><arch>amd64</arch></os>
+            </activation>
+            <properties><javafx.platform>linux</javafx.platform></properties>
+        </profile>
+        <profile>
+            <id>platform-linux-aarch64</id>
+            <activation>
+                <os><name>Linux</name><arch>aarch64</arch></os>
+            </activation>
+            <properties><javafx.platform>linux-aarch64</javafx.platform></properties>
+        </profile>
+
+        <!-- ============================================================= -->
+        <!-- `dist`: after the fat jar is built, run jpackage to produce a  -->
+        <!-- native, double-clickable app image under dist/ for this OS.    -->
+        <!-- Activated by the "Build Native App" IntelliJ run config, or on -->
+        <!-- the command line with:  mvn -P dist clean verify              -->
+        <!-- ============================================================= -->
+        <profile>
+            <id>dist</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.panteleyev</groupId>
+                        <artifactId>jpackage-maven-plugin</artifactId>
+                        <version>1.6.5</version>
+                        <executions>
+                            <execution>
+                                <id>build-app-image</id>
+                                <!-- verify runs after package, so the shaded jar exists. -->
+                                <phase>verify</phase>
+                                <goals><goal>jpackage</goal></goals>
+                                <configuration>
+                                    <type>APP_IMAGE</type>
+                                    <name>Shredder</name>
+                                    <appVersion>${project.version}</appVersion>
+                                    <vendor>Shredder</vendor>
+                                    <input>${project.build.directory}</input>
+                                    <mainJar>shredder.jar</mainJar>
+                                    <mainClass>${main.class}</mainClass>
+                                    <destination>${project.basedir}/dist</destination>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

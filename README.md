@@ -42,16 +42,47 @@ its own runtime — no IDE or separate Java install required to launch it.
 ./build-app.sh dmg
 ```
 
-Then just double-click `dist/Shredder.app` (or open the `.dmg` and drag it to
-Applications). On first launch macOS Gatekeeper may warn that the app is from
-an unidentified developer — right-click the app and choose **Open**, or allow
-it under *System Settings → Privacy & Security*.
+Or without the script, straight from Maven (this is what the IntelliJ run
+config below does):
 
-### Building on Windows / Linux
+```bash
+mvn -P dist clean verify
+```
 
-`build-app.sh` auto-detects the platform and JavaFX native classifier. On
-Windows run the equivalent commands (Git Bash works), or invoke jpackage with
-`--type msi` / `--type deb` to produce the native installer for that OS.
+Either way the executable lands in `dist/` — double-click `dist/Shredder.app`.
+On first launch macOS Gatekeeper may warn that the app is from an unidentified
+developer — right-click the app and choose **Open**, or allow it under
+*System Settings → Privacy & Security*.
+
+### Build it from IntelliJ
+
+The repo ships an IntelliJ run configuration called **Build Native App**
+(under `.run/`). Pick it from the run-configuration dropdown and press Run: it
+runs `mvn -P dist clean verify` with IntelliJ's bundled Maven and drops the
+native app in `dist/`. No global Maven install needed.
+
+So there are two ways to run inside IntelliJ:
+
+1. **Launcher** — the ordinary application run (run `Launcher.main()`) to launch
+   the app directly inside the IDE.
+2. **Build Native App** — builds the standalone, double-clickable executable in
+   `dist/` that you can then launch outside the IDE.
+
+### Cross-platform builds
+
+`jpackage` only builds for the OS it runs on, so run the build on the target OS.
+Both `mvn -P dist clean verify` and `build-app.sh` auto-detect the platform and
+the matching JavaFX native classifier, producing:
+
+| OS | Output |
+|----|--------|
+| macOS | `dist/Shredder.app` |
+| Windows | `dist/Shredder/Shredder.exe` |
+| Linux | `dist/Shredder/bin/Shredder` |
+
+For a distributable installer instead of an app image, use
+`./build-app.sh dmg` on macOS, or change the jpackage `<type>` (e.g. `MSI`,
+`DEB`) in the `dist` profile.
 
 ## How it works
 
