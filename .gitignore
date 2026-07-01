@@ -9,7 +9,8 @@ dependency-reduced-pom.xml
 .DS_Store
 
 # IDE
-.idea/
+# .idea/ is tracked and shared; IntelliJ's own .idea/.gitignore still keeps
+# machine-specific files (workspace.xml, shelf/) out.
 *.iml
 .vscode/
 .settings/
