@@ -1,0 +1,22 @@
+# Build output
+target/
+dist/
+dependency-reduced-pom.xml
+*.dmg
+*.pkg
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+nbproject/
+build/
+
+# Logs
+*.log

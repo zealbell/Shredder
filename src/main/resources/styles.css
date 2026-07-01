@@ -1,0 +1,92 @@
+.root {
+    -fx-background-color: #1e1f26;
+}
+
+.title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f5f6fa;
+}
+
+.subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #9aa0b4;
+}
+
+.path {
+    -fx-font-size: 12px;
+    -fx-text-fill: #c8cde0;
+    -fx-font-family: "Menlo", "Consolas", monospace;
+    -fx-background-color: #14151b;
+    -fx-padding: 8 10 8 10;
+    -fx-background-radius: 6;
+}
+
+.status {
+    -fx-font-size: 12px;
+    -fx-text-fill: #9aa0b4;
+}
+
+.button {
+    -fx-font-size: 14px;
+    -fx-background-radius: 8;
+    -fx-padding: 10 16 10 16;
+    -fx-cursor: hand;
+    -fx-text-fill: #f5f6fa;
+    -fx-background-color: #2b2d3a;
+}
+
+.button:hover {
+    -fx-background-color: #363949;
+}
+
+.button:disabled {
+    -fx-opacity: 0.5;
+}
+
+.primary {
+    -fx-background-color: #4a6cf7;
+}
+
+.primary:hover {
+    -fx-background-color: #5b7bff;
+}
+
+.danger {
+    -fx-background-color: #e0405a;
+    -fx-font-weight: bold;
+}
+
+.danger:hover {
+    -fx-background-color: #f24c68;
+}
+
+.divider {
+    -fx-background-color: #2b2d3a;
+}
+
+.progress-bar > .bar {
+    -fx-background-color: #4a6cf7;
+    -fx-background-radius: 6;
+}
+
+.progress-bar > .track {
+    -fx-background-color: #14151b;
+    -fx-background-radius: 6;
+}
+
+.stats {
+    -fx-background-color: #14151b;
+    -fx-background-radius: 8;
+}
+
+.stat-key {
+    -fx-text-fill: #9aa0b4;
+    -fx-font-size: 13px;
+}
+
+.stat-value {
+    -fx-text-fill: #f5f6fa;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
