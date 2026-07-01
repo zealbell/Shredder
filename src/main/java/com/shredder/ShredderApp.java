@@ -35,6 +35,7 @@ public class ShredderApp extends Application {
     private final Button shredBtn = new Button("Shred");
     private final Button cancelBtn = new Button("Stop");
     private final ProgressBar progress = new ProgressBar(0);
+    private final Label currentFileLabel = new Label();
     private final Label statusLabel = new Label("Pick a folder to begin.");
 
     private final Label filesValue = new Label("0");
@@ -77,6 +78,8 @@ public class ShredderApp extends Application {
         HBox.setHgrow(shredBtn, Priority.ALWAYS);
 
         progress.setMaxWidth(Double.MAX_VALUE);
+        currentFileLabel.getStyleClass().add("current-file");
+        currentFileLabel.setMaxWidth(Double.MAX_VALUE);
         statusLabel.getStyleClass().add("status");
         statusLabel.setWrapText(true);
 
@@ -88,6 +91,7 @@ public class ShredderApp extends Application {
                 new Separator(),
                 actions,
                 progress,
+                currentFileLabel,
                 statusLabel,
                 buildStatsCard());
         root.setPadding(new Insets(24));
@@ -175,8 +179,12 @@ public class ShredderApp extends Application {
         resetStats();
         currentJob = new ShredService(selectedFolder);
 
+        // Drive the progress bar, status line, and "current file" label straight
+        // from the task's observable properties. Because these are bound, we must
+        // never call the corresponding setters until we unbind (see setRunningUi).
         progress.progressProperty().bind(currentJob.progressProperty());
         statusLabel.textProperty().bind(currentJob.messageProperty());
+        currentFileLabel.textProperty().bind(currentJob.titleProperty());
 
         setRunningUi(true);
 
@@ -186,18 +194,21 @@ public class ShredderApp extends Application {
             showStats(stats);
             setRunningUi(false);
             statusLabel.setText(summaryLine(stats));
+            currentFileLabel.setText("");
         });
         currentJob.setOnCancelled(e -> {
             unbindRunningState();
             showStats(currentJob.getValue());
             setRunningUi(false);
             statusLabel.setText("Stopped before finishing.");
+            currentFileLabel.setText("");
         });
         currentJob.setOnFailed(e -> {
             unbindRunningState();
             setRunningUi(false);
             Throwable ex = currentJob.getException();
             statusLabel.setText("Failed: " + (ex == null ? "unknown error" : ex.getMessage()));
+            currentFileLabel.setText("");
         });
 
         Thread t = new Thread(currentJob, "shred-worker");
@@ -208,15 +219,13 @@ public class ShredderApp extends Application {
     private void unbindRunningState() {
         progress.progressProperty().unbind();
         statusLabel.textProperty().unbind();
+        currentFileLabel.textProperty().unbind();
     }
 
     private void setRunningUi(boolean running) {
         chooseBtn.setDisable(running);
         shredBtn.setDisable(running || selectedFolder == null);
         cancelBtn.setDisable(!running);
-        if (running) {
-            progress.setProgress(ProgressBar.INDETERMINATE_PROGRESS);
-        }
     }
 
     private void resetStats() {

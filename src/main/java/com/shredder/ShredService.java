@@ -41,6 +41,11 @@ public class ShredService extends Task<ShredStats> {
     protected ShredStats call() throws Exception {
         long start = System.currentTimeMillis();
 
+        // Pin the bar to a determinate 0% up front; without this the task's
+        // progress starts at -1 and the bar shows the indeterminate to-and-fro
+        // animation while we scan.
+        updateProgress(0, 1);
+
         // Phase 1: enumerate files and folders (folders kept for later removal).
         updateMessage("Scanning " + root + " …");
         List<Path> files = new ArrayList<>();
@@ -58,6 +63,8 @@ public class ShredService extends Task<ShredStats> {
                 updateMessage("Cancelled.");
                 break;
             }
+            // Show which file is being shredded right now, below the bar.
+            updateTitle(file.getFileName().toString());
             try {
                 long size = Files.size(file);
                 overwriteWithZeros(file, size, zeros);
@@ -70,6 +77,8 @@ public class ShredService extends Task<ShredStats> {
             }
             updateProgress(++done, total);
         }
+        // All files handled — no "current file" to show anymore.
+        updateTitle("");
 
         // Phase 3: remove folders deepest-first so parents empty out.
         if (!isCancelled()) {

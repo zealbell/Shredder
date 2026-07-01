@@ -22,6 +22,12 @@
     -fx-background-radius: 6;
 }
 
+.current-file {
+    -fx-font-size: 11px;
+    -fx-text-fill: #c8cde0;
+    -fx-font-family: "Menlo", "Consolas", monospace;
+}
+
 .status {
     -fx-font-size: 12px;
     -fx-text-fill: #9aa0b4;
