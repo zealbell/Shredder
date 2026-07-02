@@ -4,9 +4,9 @@ A multi-module Maven project of file utilities:
 
 | Module | Kind | What it does |
 |--------|------|--------------|
-| [`Shredder/`](Shredder/README.md) | JavaFX app | Securely erases folders: overwrites every file with zeros, then deletes them. |
-| [`Verifier/`](Verifier/README.md) | JavaFX app | Browses a folder tree and computes per-file checksums (CRC32, Adler-32) and hashes (MD5, SHA-1, SHA-256). |
-| [`Reductions/`](Reductions/README.md) | Pure Java library | Compression toolkit lifted from Harmattan: transcoding across codecs, corpus generation and benchmarking. |
+| [`Shredder/`](Shredder/README.md) | JavaFX app | Securely erases folders: recursively overwrites every file with zeros, deletes them, then removes the emptied folders. |
+| [`Verifier/`](Verifier/README.md) | JavaFX app | Browses a folder tree and computes per-file checksums (CRC32, Adler-32) and hashes (MD5, SHA-1, SHA-256), reading each file once for all five. |
+| [`Reductions/`](Reductions/README.md) | Pure Java library | Compression toolkit: a pluggable registry of 20 codecs — from in-repo RLE, Huffman, BWT, LZ78 and LZW to GZIP, Zstandard, Brotli, XZ, LZ4 and more — plus corpus generation and Markdown benchmark reports. |
 
 ## Requirements
 

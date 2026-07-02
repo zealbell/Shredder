@@ -1,6 +1,6 @@
 # Heavy benchmarking assets, downloaded/generated at runtime by Benchmarking
-# and Generator. Kept out of git just like Harmattan's repo: only the
-# per-corpus README.md files are tracked.
+# and Generator. Kept out of git: only the per-corpus README.md files
+# are tracked.
 src/main/resources/benchmarking/corpora/**
 !src/main/resources/benchmarking/corpora/*/
 !src/main/resources/benchmarking/corpora/*/README.md

@@ -95,7 +95,7 @@ public class Benchmarking {
 
     /**
      * Creates a new Benchmarking instance with default settings.
-     * @param title The title of the benchmarking suite (e.g., "Harmattan").
+     * @param title The title of the benchmarking suite (e.g., "Reductions").
      */
     public Benchmarking(String title) {
         this.title = title;
@@ -107,7 +107,7 @@ public class Benchmarking {
     }
 
     public Benchmarking() {
-        this("Harmattan");
+        this("Reductions");
     }
 
     public Benchmarking(String title, String resultsPath) {
@@ -1315,7 +1315,7 @@ public class Benchmarking {
 
             initializeCorpora(random, "canterbury", "silesia", "wikipedia");
 
-            Benchmarking benchmarking = new Benchmarking("Harmattan");
+            Benchmarking benchmarking = new Benchmarking("Reductions");
             benchmarking.showLogs(true); // Enable detailed logs
 
             // Create Light Codec on the fly (no-op baseline)

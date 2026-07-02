@@ -5,50 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf3b9c25-d28c-4dd3-823b-b0e3e5aab73b" name="Changes" comment="shredder-2">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reductions/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reductions/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reductions/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reductions/src/main/java/com/linkersoft/reductions/Benchmarking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reductions/src/main/java/com/linkersoft/reductions/Generator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reductions/src/main/java/com/linkersoft/reductions/Hardware.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reductions/src/main/java/com/linkersoft/reductions/Transcoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/corpora/canterbury/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/corpora/random/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/corpora/silesia/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/corpora/wikipedia/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-15:28:34:16.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-16-02-2026.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-17-02-2026.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-18:12:57:16.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-19:22:49:16.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-19:38:59:11.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-21:49:41:15.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-21:52:49:14.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/benchmarking-blueprint.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/benchmarking-demo.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Shredder/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Shredder/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Verifier/.run/Build Native App (Verifier).run.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Verifier/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Verifier/build-app.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Verifier/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Verifier/src/main/java/com/verifier/DigestService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Verifier/src/main/java/com/verifier/Launcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Verifier/src/main/java/com/verifier/VerifierApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Verifier/src/main/resources/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.run/Build Native App.run.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Shredder/.run/Build Native App (Shredder).run.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-app.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Shredder/build-app.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shredder/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shredder/src/main/java/com/shredder/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shredder/ShredService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shredder/src/main/java/com/shredder/ShredService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shredder/ShredStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shredder/src/main/java/com/shredder/ShredStats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shredder/ShredderApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shredder/src/main/java/com/shredder/ShredderApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Shredder/src/main/resources/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reductions/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Reductions/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reductions/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Reductions/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reductions/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Reductions/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reductions/src/main/java/com/linkersoft/reductions/Benchmarking.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reductions/src/main/java/com/linkersoft/reductions/Benchmarking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-15:28:34:16.md" beforeDir="false" afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-15:28:34:16.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-16-02-2026.md" beforeDir="false" afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-16-02-2026.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-17-02-2026.md" beforeDir="false" afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-17-02-2026.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-18:12:57:16.md" beforeDir="false" afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-18:12:57:16.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-19:22:49:16.md" beforeDir="false" afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-19:22:49:16.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-19:38:59:11.md" beforeDir="false" afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-19:38:59:11.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-21:49:41:15.md" beforeDir="false" afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-21:49:41:15.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-21:52:49:14.md" beforeDir="false" afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-21:52:49:14.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,19 +48,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Launcher.executor": "Run",
-    "Application.Transcoder$Testing.executor": "Run",
-    "Maven.Build Native App (Shredder).executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/oluwatobiamusa/Desktop/Projects/Files/Reductions/src/main/resources"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Launcher.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Transcoder$Testing.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Build Native App (Shredder).executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/oluwatobiamusa/Desktop/Projects/Files/Reductions/src/main/resources&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Reductions/src/main/resources" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Transcoder$Testing">
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.shredder.Launcher" />
@@ -106,11 +81,11 @@
       </method>
     </configuration>
     <configuration name="Transcoder$Testing" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.linkersoft.harmattan.reductions.Transcoder$Testing" />
+      <option name="MAIN_CLASS_NAME" value="com.linkersoft.reductions.Transcoder$Testing" />
       <module name="reductions" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.linkersoft.harmattan.reductions.*" />
+          <option name="PATTERN" value="com.linkersoft.reductions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

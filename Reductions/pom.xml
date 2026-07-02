@@ -13,7 +13,7 @@
     <artifactId>reductions</artifactId>
     <packaging>jar</packaging>
     <name>Reductions</name>
-    <description>Pure-Java compression toolkit lifted from Harmattan: transcoding, corpus generation and benchmarking (no JavaFX).</description>
+    <description>Pure-Java compression toolkit: a pluggable codec registry (RLE, Huffman, BWT, LZ78, LZW, GZIP, Deflate, bzip2, XZ, LZMA, Zstandard, Brotli, LZ4, Snappy), corpus generation and Markdown benchmark reports (no JavaFX).</description>
 
     <dependencies>
         <!-- LZMA / XZ streams used by Transcoder and Benchmarking. -->
