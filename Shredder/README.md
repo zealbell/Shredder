@@ -59,18 +59,18 @@ developer — right-click the app and choose **Open**, or allow it under
 
 ### Build it from IntelliJ
 
-The repo ships an IntelliJ run configuration called **Build Native App**
-(under the root `.run/`). Pick it from the run-configuration dropdown and
-press Run: it runs `mvn -P dist clean verify` with IntelliJ's bundled Maven
-and drops the native app of every app module in its `dist/` (this one included).
-No global Maven install needed.
+This module ships an IntelliJ run configuration called
+**Build Native App (Shredder)** (under `Shredder/.run/`). Pick it from the
+run-configuration dropdown and press Run: it runs
+`mvn -P dist clean verify -pl :shredder` with IntelliJ's bundled Maven and
+drops the native app in this module's `dist/`. No global Maven install needed.
 
 So there are two ways to run inside IntelliJ:
 
 1. **Launcher** — the ordinary application run (run `Launcher.main()`) to launch
    the app directly inside the IDE.
-2. **Build Native App** — builds the standalone, double-clickable executable in
-   `dist/` that you can then launch outside the IDE.
+2. **Build Native App (Shredder)** — builds the standalone, double-clickable
+   executable in `dist/` that you can then launch outside the IDE.
 
 ### Cross-platform builds
 
