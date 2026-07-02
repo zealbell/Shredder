@@ -4,12 +4,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.shredder</groupId>
-    <artifactId>shredder</artifactId>
+    <groupId>com.files</groupId>
+    <artifactId>files</artifactId>
     <version>1.0.0</version>
-    <packaging>jar</packaging>
-    <name>Shredder</name>
-    <description>A JavaFX file shredder: overwrites files with zero bytes, then deletes them.</description>
+    <packaging>pom</packaging>
+    <name>Files</name>
+    <description>File utilities suite: Shredder (secure erase), Verifier (checksums/hashes) and Reductions (compression).</description>
+
+    <modules>
+        <module>Shredder</module>
+        <module>Verifier</module>
+        <module>Reductions</module>
+    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -21,93 +27,101 @@
           This value is only the fallback; override with -Djavafx.platform=… .
         -->
         <javafx.platform>mac</javafx.platform>
-        <main.class>com.shredder.Launcher</main.class>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-controls</artifactId>
-            <version>${javafx.version}</version>
-            <classifier>${javafx.platform}</classifier>
-        </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-graphics</artifactId>
-            <version>${javafx.version}</version>
-            <classifier>${javafx.platform}</classifier>
-        </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-base</artifactId>
-            <version>${javafx.version}</version>
-            <classifier>${javafx.platform}</classifier>
-        </dependency>
-    </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-controls</artifactId>
+                <version>${javafx.version}</version>
+                <classifier>${javafx.platform}</classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-graphics</artifactId>
+                <version>${javafx.version}</version>
+                <classifier>${javafx.platform}</classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-base</artifactId>
+                <version>${javafx.version}</version>
+                <classifier>${javafx.platform}</classifier>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
-        <finalName>shredder</finalName>
-        <plugins>
-            <!-- `mvn clean` also removes the packaged app under dist/ so the
-                 "Build Native App" run config can re-create it each time. -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-clean-plugin</artifactId>
-                <version>3.4.0</version>
-                <configuration>
-                    <filesets>
-                        <fileset>
-                            <directory>${project.basedir}/dist</directory>
-                        </fileset>
-                    </filesets>
-                </configuration>
-            </plugin>
+        <pluginManagement>
+            <plugins>
+                <!-- Each app module cleans its own dist/ so the "Build Native App"
+                     run config can re-create it each time. -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>3.4.0</version>
+                    <configuration>
+                        <filesets>
+                            <fileset>
+                                <directory>${project.basedir}/dist</directory>
+                            </fileset>
+                        </filesets>
+                    </configuration>
+                </plugin>
 
-            <!-- Run in dev with: mvn javafx:run -->
-            <plugin>
-                <groupId>org.openjfx</groupId>
-                <artifactId>javafx-maven-plugin</artifactId>
-                <version>0.0.8</version>
-                <configuration>
-                    <mainClass>com.shredder.ShredderApp</mainClass>
-                </configuration>
-            </plugin>
+                <!-- Run a JavaFX module in dev with: mvn javafx:run -->
+                <plugin>
+                    <groupId>org.openjfx</groupId>
+                    <artifactId>javafx-maven-plugin</artifactId>
+                    <version>0.0.8</version>
+                </plugin>
 
-            <!-- Build a single runnable fat jar. The Launcher main class (which does
-                 NOT extend Application) lets JavaFX start from the classpath. -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.6.0</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                        <configuration>
-                            <transformers>
-                                <transformer
-                                    implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>${main.class}</mainClass>
-                                </transformer>
-                            </transformers>
-                            <filters>
-                                <filter>
-                                    <artifact>*:*</artifact>
-                                    <excludes>
-                                        <exclude>META-INF/*.SF</exclude>
-                                        <exclude>META-INF/*.DSA</exclude>
-                                        <exclude>META-INF/*.RSA</exclude>
-                                        <exclude>module-info.class</exclude>
-                                    </excludes>
-                                </filter>
-                            </filters>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
+                <!-- Build a single runnable fat jar. Each app's Launcher main class
+                     (which does NOT extend Application) lets JavaFX start from the
+                     classpath. -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>3.6.0</version>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>shade</goal>
+                            </goals>
+                            <configuration>
+                                <transformers>
+                                    <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                        <mainClass>${main.class}</mainClass>
+                                    </transformer>
+                                </transformers>
+                                <filters>
+                                    <filter>
+                                        <artifact>*:*</artifact>
+                                        <excludes>
+                                            <exclude>META-INF/*.SF</exclude>
+                                            <exclude>META-INF/*.DSA</exclude>
+                                            <exclude>META-INF/*.RSA</exclude>
+                                            <exclude>module-info.class</exclude>
+                                        </excludes>
+                                    </filter>
+                                </filters>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <!-- `dist` profile: wraps the fat jar with jpackage into a native,
+                     double-clickable app image under each module's dist/. -->
+                <plugin>
+                    <groupId>org.panteleyev</groupId>
+                    <artifactId>jpackage-maven-plugin</artifactId>
+                    <version>1.6.5</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 
     <profiles>
@@ -148,43 +162,6 @@
                 <os><name>Linux</name><arch>aarch64</arch></os>
             </activation>
             <properties><javafx.platform>linux-aarch64</javafx.platform></properties>
-        </profile>
-
-        <!-- ============================================================= -->
-        <!-- `dist`: after the fat jar is built, run jpackage to produce a  -->
-        <!-- native, double-clickable app image under dist/ for this OS.    -->
-        <!-- Activated by the "Build Native App" IntelliJ run config, or on -->
-        <!-- the command line with:  mvn -P dist clean verify              -->
-        <!-- ============================================================= -->
-        <profile>
-            <id>dist</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.panteleyev</groupId>
-                        <artifactId>jpackage-maven-plugin</artifactId>
-                        <version>1.6.5</version>
-                        <executions>
-                            <execution>
-                                <id>build-app-image</id>
-                                <!-- verify runs after package, so the shaded jar exists. -->
-                                <phase>verify</phase>
-                                <goals><goal>jpackage</goal></goals>
-                                <configuration>
-                                    <type>APP_IMAGE</type>
-                                    <name>Shredder</name>
-                                    <appVersion>${project.version}</appVersion>
-                                    <vendor>Shredder</vendor>
-                                    <input>${project.build.directory}</input>
-                                    <mainJar>shredder.jar</mainJar>
-                                    <mainClass>${main.class}</mainClass>
-                                    <destination>${project.basedir}/dist</destination>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
         </profile>
     </profiles>
 </project>

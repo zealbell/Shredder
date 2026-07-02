@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.files</groupId>
+        <artifactId>files</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>reductions</artifactId>
+    <packaging>jar</packaging>
+    <name>Reductions</name>
+    <description>Pure-Java compression toolkit lifted from Harmattan: transcoding, corpus generation and benchmarking (no JavaFX).</description>
+
+    <dependencies>
+        <!-- LZMA / XZ streams used by Transcoder and Benchmarking. -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-compress</artifactId>
+            <version>1.26.0</version>
+        </dependency>
+        <!-- Runtime backend for commons-compress LZMA/XZ codecs. -->
+        <dependency>
+            <groupId>org.tukaani</groupId>
+            <artifactId>xz</artifactId>
+            <version>1.9</version>
+        </dependency>
+        <!-- Zstandard codec (JNI). -->
+        <dependency>
+            <groupId>com.github.luben</groupId>
+            <artifactId>zstd-jni</artifactId>
+            <version>1.5.5-11</version>
+        </dependency>
+        <!-- Brotli codec (JNI). -->
+        <dependency>
+            <groupId>com.aayushatharva.brotli4j</groupId>
+            <artifactId>brotli4j</artifactId>
+            <version>1.20.0</version>
+        </dependency>
+        <!-- Base64/hex helpers used by Transcoder. -->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.16.1</version>
+        </dependency>
+        <!-- Hardware inventory printed in benchmark reports. -->
+        <dependency>
+            <groupId>com.github.oshi</groupId>
+            <artifactId>oshi-core</artifactId>
+            <version>6.4.10</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>reductions</finalName>
+    </build>
+</project>

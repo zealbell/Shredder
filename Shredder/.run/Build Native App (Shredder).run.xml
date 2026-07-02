@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Build Native App" type="MavenRunConfiguration" factoryName="Maven">
+  <configuration default="false" name="Build Native App (Shredder)" type="MavenRunConfiguration" factoryName="Maven">
     <MavenSettings>
       <option name="myGeneralSettings" />
       <option name="myRunnerSettings" />
@@ -23,7 +23,9 @@
             </map>
           </option>
           <option name="projectsCmdOptionValues">
-            <list />
+            <list>
+              <option value=":shredder" />
+            </list>
           </option>
           <option name="resolveToWorkspace" value="false" />
           <option name="workingDirPath" value="$PROJECT_DIR$" />

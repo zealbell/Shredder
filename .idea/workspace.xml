@@ -4,7 +4,52 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf3b9c25-d28c-4dd3-823b-b0e3e5aab73b" name="Changes" comment="" />
+    <list default="true" id="cf3b9c25-d28c-4dd3-823b-b0e3e5aab73b" name="Changes" comment="shredder-2">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reductions/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reductions/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reductions/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reductions/src/main/java/com/linkersoft/reductions/Benchmarking.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reductions/src/main/java/com/linkersoft/reductions/Generator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reductions/src/main/java/com/linkersoft/reductions/Hardware.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reductions/src/main/java/com/linkersoft/reductions/Transcoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/corpora/canterbury/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/corpora/random/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/corpora/silesia/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/corpora/wikipedia/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-15:28:34:16.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-16-02-2026.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-17-02-2026.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-18:12:57:16.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-19:22:49:16.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-19:38:59:11.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-21:49:41:15.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/Benchmarking(3)-21:52:49:14.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/benchmarking-blueprint.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reductions/src/main/resources/benchmarking/sandbox/results/benchmarking-demo.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shredder/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shredder/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Verifier/.run/Build Native App (Verifier).run.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Verifier/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Verifier/build-app.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Verifier/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Verifier/src/main/java/com/verifier/DigestService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Verifier/src/main/java/com/verifier/Launcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Verifier/src/main/java/com/verifier/VerifierApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Verifier/src/main/resources/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.run/Build Native App.run.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Shredder/.run/Build Native App (Shredder).run.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-app.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Shredder/build-app.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shredder/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shredder/src/main/java/com/shredder/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shredder/ShredService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shredder/src/main/java/com/shredder/ShredService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shredder/ShredStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shredder/src/main/java/com/shredder/ShredStats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shredder/ShredderApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shredder/src/main/java/com/shredder/ShredderApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Shredder/src/main/resources/styles.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,21 +58,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "zealbell"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;zealbell&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/zealbell/Shredder.git",
-    "accountId": "79ee760f-5aba-44f7-83e9-fe8da39d4437"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/zealbell/Shredder.git&quot;,
+    &quot;accountId&quot;: &quot;79ee760f-5aba-44f7-83e9-fe8da39d4437&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="3Fuw9LcjNY67iQh293b6zBUns2i" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -36,16 +81,17 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Launcher.executor": "Run",
-    "Maven.Build Native App.executor": "Run",
+    "Application.Transcoder$Testing.executor": "Run",
+    "Maven.Build Native App (Shredder).executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/oluwatobiamusa/Desktop/Projects/Shredder"
+    "last_opened_file_path": "/Users/oluwatobiamusa/Desktop/Projects/Files/Reductions/src/main/resources"
   }
 }]]></component>
-  <component name="RunManager" selected="Maven.Build Native App">
+  <component name="RunManager" selected="Application.Transcoder$Testing">
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.shredder.Launcher" />
       <module name="shredder" />
@@ -59,19 +105,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="Shredder" />
+    <configuration name="Transcoder$Testing" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.linkersoft.harmattan.reductions.Transcoder$Testing" />
+      <module name="reductions" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.linkersoft.harmattan.reductions.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Shredder" />
-      <option name="filePath" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Transcoder$Testing" />
         <item itemvalue="Application.Launcher" />
       </list>
     </recent_temporary>
