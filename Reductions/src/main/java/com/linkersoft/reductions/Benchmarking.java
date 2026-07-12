@@ -74,11 +74,11 @@ import javax.swing.JFileChooser;
  * <ul>
  *   <li>{@link Corpora} uses
  *       <a href="../../../../../resources/benchmarking/sandbox/results/templates/corpora-blueprint.md">{@code corpora-blueprint.md}</a>
- *       and writes {@code Corpora-Benchmark(N)-dd-MM-yyyy:HH:mm:ss.md}, where {@code N} is the number of participating codecs.</li>
+ *       and writes {@code Corpora-Benchmark(N)-dd-MM-yyyy~HH~mm~ss.md}, where {@code N} is the number of participating codecs.</li>
  *   <li>{@link Target} uses
  *       <a href="../../../../../resources/benchmarking/sandbox/results/templates/target-blueprint.md">{@code target-blueprint.md}</a>
  *       (a single-file mirror of the corpora blueprint &mdash; same section titles and Metrics Overview,
- *       minus the multi-corpus structure/comparison sections) and writes {@code Target-Benchmark(fileName)-dd-MM-yyyy:HH:mm:ss.md}.</li>
+ *       minus the multi-corpus structure/comparison sections) and writes {@code Target-Benchmark(fileName)-dd-MM-yyyy~HH~mm~ss.md}.</li>
  * </ul>
  *
  * <h2>Corpus directory organization (Canterbury, Silesia, Wikipedia)</h2>
@@ -1191,7 +1191,7 @@ public class Benchmarking {
      * on the main thread, after which the remaining codecs are benchmarked across the maximum available
      * worker threads. Results are aggregated in codec-registration order, fill {@link #CORPORA_BLUEPRINT}
      * ({@code results/templates/corpora-blueprint.md}) and are written as
-     * {@code Corpora-Benchmark(N)-dd-MM-yyyy:HH:mm:ss.md}.
+     * {@code Corpora-Benchmark(N)-dd-MM-yyyy~HH~mm~ss.md}.
      *
      * <h3>Entry point</h3>
      * {@link #main(String[])} demonstrates a full run: it sources and initializes the corpora, then
@@ -1697,7 +1697,8 @@ public class Benchmarking {
             String reportContent = generateReport(corpusResults);
 
             LocalDateTime now = LocalDateTime.now();
-            String timestamp = now.format(DateTimeFormatter.ofPattern("dd-MM-yyyy:HH:mm:ss"));
+            // '~' rather than ':' in the time part so the file name stays valid on Windows/other OSes.
+            String timestamp = now.format(DateTimeFormatter.ofPattern("dd-MM-yyyy~HH~mm~ss"));
             String reportName = String.format("Corpora-Benchmark(%d)-%s.md", codecIds.size(), timestamp);
 
             String reportPath = writeReport(reportName, reportContent);
@@ -1776,7 +1777,7 @@ public class Benchmarking {
      * keeps the corpora report's section
      * titles and full Metrics Overview, replacing the multi-corpus "Test Corpus Structure" with a
      * "Target File" section and omitting the cross-corpus "Comparative Analysis". Output is written
-     * as {@code Target-Benchmark(fileName)-dd-MM-yyyy:HH:mm:ss.md}.
+     * as {@code Target-Benchmark(fileName)-dd-MM-yyyy~HH~mm~ss.md}.
      *
      * <h3>Entry point</h3>
      * {@link #main(String[])} demonstrates a run against GZIP and ZSTANDARD. The "Light" baseline
@@ -1901,7 +1902,8 @@ public class Benchmarking {
             String reportContent = generateReport(results, targetFile);
 
             LocalDateTime now = LocalDateTime.now();
-            String timestamp = now.format(DateTimeFormatter.ofPattern("dd-MM-yyyy:HH:mm:ss"));
+            // '~' rather than ':' in the time part so the file name stays valid on Windows/other OSes.
+            String timestamp = now.format(DateTimeFormatter.ofPattern("dd-MM-yyyy~HH~mm~ss"));
             String reportName = String.format("Target-Benchmark(%s)-%s.md", targetFile.getName(), timestamp);
 
             String reportPath = writeReport(reportName, reportContent);
