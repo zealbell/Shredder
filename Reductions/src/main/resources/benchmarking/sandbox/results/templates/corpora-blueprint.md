@@ -1,4 +1,4 @@
-# Light Benchmarking Report
+# Corpora-Benchmark Report
 
 > **Report Generated:** {{TIMESTAMP}}  
 > **Benchmark Suite:** V 1.0  
@@ -13,15 +13,26 @@
 1. [Executive Summary](#executive-summary)
 2. [Participating Codecs](#participating-codecs)
 3. [Test Corpus Structure](#test-corpus-structure)
-4. [Benchmark Results](#benchmark-results)
-5. [Comparative Analysis](#comparative-analysis)
-6. [Conclusion](#conclusion)
+4. [Metrics Overview](#metrics-overview)
+5. [Benchmark Results](#benchmark-results)
+6. [Comparative Analysis](#comparative-analysis)
+7. [Conclusion](#conclusion)
 
 ---
 
 ## Executive Summary
 
 This report presents comprehensive benchmarking results for {{TITLE}} against standard compression algorithms. The benchmarks evaluate performance against standardized test corpora (`Canterbury`, `Silesia`, `Wikipedia`) and a `Random` dataset. Key metrics include compression ratio, space savings, compression speed, decompression speed, and theoretical entropy analysis.
+
+### Session
+
+> **Started:** {{START_TIME}}  
+> **Ended:** {{END_TIME}}  
+> **Duration:** {{DURATION}}
+
+Codecs are benchmarked simultaneously across worker threads, so the per-codec breakdown below reports each codec's own start, end and duration independent of the overall session time:
+
+{{CODEC_SCHEDULE_TABLE}}
 
 ### Key Findings
 
@@ -58,39 +69,10 @@ For the **Random** corpus, files are generated on-the-fly or persisted in:
 
 ### Folder Tree
 
+The total size of each folder (all files within, recursively) is prepended to its branch:
+
 ```
-benchmarking/
-├── corpus/
-│   ├── canterbury/
-│   │   ├── archives/
-│   │   │   ├── ...
-│   │   ├── contents/
-│   │   │   ├── ...
-│   │   └── blobs/
-│   │       ├── ...
-│   ├── silesia/
-│   │   ├── archives/
-│   │   │   ├── ...
-│   │   ├── contents/
-│   │   │   ├── ...
-│   │   └── blobs/
-│   │       ├── ...
-│   ├── wikipedia/
-│   │   ├── archives/
-│   │   │   ├── ...
-│   │   ├── contents/
-│   │   │   ├── ...
-│   │   └── blobs/
-│   │       ├── ...
-│   └── random/
-│       ├── B/
-│       │   ├── ...
-│       ├── KB/
-│       │   ├── ...
-│       └── MB/
-│           ├── ...
-└── results/
-    └── [generated reports]
+{{FOLDER_TREE}}
 ```
 
 ---

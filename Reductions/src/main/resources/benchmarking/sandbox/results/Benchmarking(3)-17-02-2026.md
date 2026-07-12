@@ -30,7 +30,7 @@
 
 ## Executive Summary
 
-This report presents comprehensive benchmarking results for Reductions against standard compression algorithms. The benchmarks evaluate performance against standardized test corpora (`Canterbury`, `Silesia`, `Wikipedia`) and a `Random` dataset. Key metrics include compression ratio, space savings, compression speed, decompression speed, and theoretical entropy analysis.
+This report presents comprehensive benchmarking results for Harmattan against standard compression algorithms. The benchmarks evaluate performance against standardized test corpora (`Canterbury`, `Silesia`, `Wikipedia`) and a `Random` dataset. Key metrics include compression ratio, space savings, compression speed, decompression speed, and theoretical entropy analysis.
 
 ### Key Findings
 
@@ -97,7 +97,7 @@ The following codecs were included in this benchmark run:
       <td>Apache Commons Compress</td>
       <td>1.26.0</td>
       <td>Yes</td>
-      <td>[header (10B)] + [payload (3260898B)] + [trailer (8B)]</td>
+      <td>[header (10B)] + [input (3260898B)] + [trailer (8B)]</td>
       <td>DEFLATE algorithm with sliding window.</td>
     </tr>
     <tr>
